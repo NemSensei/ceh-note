@@ -73,3 +73,64 @@ The attacker employs TCP SYN flooding techniques using spoofed IP addresses to p
 netmap -rp 
 
 - UDP Ping scan
+
+netmap -PU
+
+## ICMP ECHO Ping Scan
+
+Does icmp pass thgrough firewall ? ICMP ECHO -> ICMP ECHO
+
+nemap -PE
+
+## ICMP ECHO Ping Sweep
+
+Slow method. 
+
+### Tools for ping sweep 
+
+- Angry IP Scanner
+
+## Ping sweep contermeasure
+
+- Configure well the firewall 
+- use IDS 
+- Carefully evaluate ICMP traffic
+- Terminate connection with host that make more than 10 Echo requests
+- Use DMZ with basic commands allowed 
+- Use ACL's
+
+## TCP SYN Ping Scan
+
+- Machine can be scanned parallely 
+- Determine if host is up without connection, so not recorded in logs.
+
+## TCP ACK Ping Scan
+
+Same as SYN but less firewall are configured to counter it.
+
+## IP Protocol Ping Sca
+
+Send a lot if different packets for ICMP.
+
+nmap -PO
+
+## Port Scanning Technique
+
+### TCP Connect/Full Open Sca
+
+Most reliable. Full tcp 3 way handshake. 
+nmap -sT
+
+### Stealth Scan
+
+Abort before the end of the Handshake, it bypasses firewall and logging system.
+nmap -sS
+
+### Inverse TCP Flag Sca
+
+Send FIN,URG or PSH flag, if port is open = no answer. If port closed = RST from host.
+
+### SSDP and List Scanning
+Simple Service Discovery Protocol (SSDP) is a network protocol that generally communicates with machines when querying them with routable IPv4 or IPv6 multicast addresses. 
+
+
