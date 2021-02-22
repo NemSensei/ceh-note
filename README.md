@@ -6,12 +6,12 @@ Thes are my notes for CEH.
 
 ## TCP Flags :
 
--Syn :  notify a nw sequence number. (etablish connection)
--ACK : confirme la reception et identify the next expected sequence
--PSH : Start and end of data transmission.
--URG : Process the data asap.
--FIN : No more transmission will be send 
--RST : When there is an error. It abort the transmission
+- Syn :  notify a nw sequence number. (etablish connection)
+- ACK : confirme la reception et identify the next expected sequence
+- PSH : Start and end of data transmission.
+- URG : Process the data asap.
+- FIN : No more transmission will be send 
+- RST : When there is an error. It abort the transmission
 
 ## Initialisation TCP
 SYN -> SYN ACK -> ACK 
@@ -25,15 +25,15 @@ ACK ->
 
 ## Scanning Tools
 
--nmap
+- nmap
 nmap /options/  /Target IP/
 
--Hping2/Hping3 
+- Hping2/Hping3 
 hping /options/ /target ip/
 
--Metasploit
+- Metasploit
 
--NetScanToolspro
+- NetScanToolspro
 
 
 
@@ -60,16 +60,16 @@ The attacker employs TCP SYN flooding techniques using spoofed IP addresses to p
 
 ## Scanning for mobile
 
--IP Scanner
+- IP Scanner
 
--Fing 
+- Fing 
 
--Network Scanner
+- Network Scanner
 
 ## Host discovery 
 
--ARP Ping Scan 
+- ARP Ping Scan 
 
 netmap -rp 
 
--UDP Ping scan
+- UDP Ping scan
