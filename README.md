@@ -6,12 +6,12 @@ Thes are my notes for CEH.
 
 ## TCP Flags :
 
-Syn :  notify a nw sequence number. (etablish connection)
-ACK : confirme la reception et identify the next expected sequence
-PSH : Start and end of data transmission.
-URG : Process the data asap.
-FIN : No more transmission will be send 
-RST : When there is an error. It abort the transmission
+-Syn :  notify a nw sequence number. (etablish connection)
+-ACK : confirme la reception et identify the next expected sequence
+-PSH : Start and end of data transmission.
+-URG : Process the data asap.
+-FIN : No more transmission will be send 
+-RST : When there is an error. It abort the transmission
 
 ## Initialisation TCP
 SYN -> SYN ACK -> ACK 
@@ -25,5 +25,51 @@ ACK ->
 
 ## Scanning Tools
 
-nmap <options> <Target IP> 
+-nmap
+nmap /options/  /Target IP/
 
+-Hping2/Hping3 
+hping /options/ /target ip/
+
+-Metasploit
+
+-NetScanToolspro
+
+
+
+### icmp scanning 
+see of host are up by sending ping or icmp
+hping3 -1 10.0.0.25 
+
+### ACK scan on port 80
+checking if there is a firewall that block the connections.
+hping3 –A 10.0.0.25 –p 80
+
+### UDP scan on port 80 
+
+hping3 -2 10.0.0.25 –p 8
+
+### Intercept all traffic containing HTTP signature
+
+Ex. hping3 -9 HTTP –I eth0
+
+### SYN flooding a victim 
+
+hping3 -S 192.168.1.1 -a 192.168.1.254 -p 22 --flood 
+The attacker employs TCP SYN flooding techniques using spoofed IP addresses to perform a DoS attack.
+
+## Scanning for mobile
+
+-IP Scanner
+
+-Fing 
+
+-Network Scanner
+
+## Host discovery 
+
+-ARP Ping Scan 
+
+netmap -rp 
+
+-UDP Ping scan
