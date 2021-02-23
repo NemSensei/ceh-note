@@ -133,4 +133,60 @@ Send FIN,URG or PSH flag, if port is open = no answer. If port closed = RST from
 ### SSDP and List Scanning
 Simple Service Discovery Protocol (SSDP) is a network protocol that generally communicates with machines when querying them with routable IPv4 or IPv6 multicast addresses. 
 
+## Os discorvery / Banner grabbing
+
+### Active Banner Grabbing
+
+Sending bad ICMP packets and comparing the response to a os base response database. 
+
+### Passive Banner Grabbing
+
+Instead of sendind packets and scanning, it sniff to study telltale that can reveal OS.
+
+Avec le TTL et le WIndows Size on peut determiner l'OS
+
+----------------
+
+- Nmap
+- Unicornscan
+- Nmap NSE
+- Wireshark
+
+## Countermeasures 
+
+- fisplay false banner
+- only necessary service
+- use ServerMask
+- Hide file extension 
+
+## Scanning Beyond IDS and Firewall
+
+- **Packet Fragmentation**: The attacker sends fragmented probe packets to the intended target, which reassembles the fragments after receiving all of them.
+- **Source Routing**: The attacker specifies the routing path for the malformed packet to reach the intended target.
+-  **Source Port Manipulation**: The attacker manipulates the actual source port with the common source port to evade the IDS/firewall.
+- **IP Address Decoy**: The attacker generates or manually specifies IP addresses of decoys so that the IDS/firewall cannot determine the actual IP address.
+- **IP Address Spoofing**: The attacker changes the source IP addresses so that the attack appears to be coming from someone else.
+- **Randomizing Host Order**: The attacker scans the number of hosts in the target network in a random order to scan the intended target that lies beyond the firewall.
+- **Creating Custom Packets**: The attacker sends custom packets to scan the intended target beyond the firewalls.
+- **Sending Bad Checksums**: The attacker sends packets with bad or bogus TCP/UPD checksums to the intended target
+- **Proxy Servers**: The attacker uses a chain of proxy servers to hide the actual source of a scan and evade certain IDS/firewall restrictions.
+- **Anonymizers**: The attacker uses anonymizers, which allows them to bypass Internet censors and evade certain IDS and firewall rules.
+
+
+
+
+# Module 4 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
