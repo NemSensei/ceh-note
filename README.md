@@ -224,11 +224,13 @@ Host x request for active session -> host Y check if host x in MIB. if not send 
 
 lighweight directory access procotol
 
-**Softerra LDAP Administrato**
+**Softerra LDAP Administraton** : tools to enumerate every info in a ldap server
 
 ## NTP and NFS Enumeration 
 
 ### NTP 
+
+Network time protocol
 
 - List of connected hosts
 - Client IP, Os and names
@@ -241,21 +243,159 @@ lighweight directory access procotol
 | ntpdc | This command queries the ntpd daemon about its current state and requests changes in that state. Attackers use this command to retrieve the state and statistics of each NTP server  |
 | ntpq | This command monitors the operations of the NTP daemon ntpd and determines performance.   |
 
+**PRTG Network Monitor** : PRTG monitors all systems, devices, traffic, and applications of IT infrastructure by using various technologies such as SNMP, WMI, and SSH.
 
 
+### NFS 
+
+Network file system
+NFS is a type of file system that enables users to access, view, store, and update files over a remote server. 
+
+| Command | Description |
+| ----------- | ----------- |
+| rpcinfo -p 10.10.10. | scan the target IP address for an open NFS port (port 2049) and the NFS services running on it |
+| showmount -e 10.10.10.1 | view the list of shared files and directories  |
+
+**RPCScan** : RPCScan communicates with RPC services and checks misconfigurations on NFS share.
+Python3 rpc-scan.py 10.10.10.19 --rpc
+
+**SuperEnum** : SuperEnum includes a script that performs the basic enumeration of any open port. 
+
+## SMTP and DNS Enumeration
+
+### SMTP Enumeration Too
+
+**NetScanTools Pr** : NetScanTools Pro’s SMTP Email Generator tool tests the process of sending an email message through an SMTP server. Attackers use NetScanTools Pro for SMTP enumeration and extract all the email header parameters, including confirm/urgent flags. 
+
+**smtp-user-enum** : smtp-user-enum is a tool for enumerating OS-level user accounts on Solaris via the SMTP service (sendmail). 
+
+### DNS Enumeration Using Zone Transfer
+
+DNS zone transfer is the process of transferring a copy of the DNS zone file from the primary DNS server to a secondary DNS server.
+An attacker performs DNS zone transfer enumeration to locate the DNS server and access records of the target organization.
+
+#### dig Command 
+
+Attackers use the dig command on Linux-based systems to query the DNS name server.
+
+| Command | Description |
+| ----------- | ----------- |
+| dig ns <target domain |retrieves all the DNS name servers of the target domain. Next, attackers use one of the name servers from the output of the above command to test whether the target DNS allows zone transfers. |
+| dig @ axfr|  Next, attackers use one of the name servers from the output of the above command to test whether the target DNS allows zone transfers. |
+
+**nslookup Command** : Attackers use the nslookup command on Windows-based systems to query the DNS name servers and retrieve information about the target .
+
+**DNSRecon** :: Attackers use DNSRecon to check all NS records of the target domain for zone transfers.
+dnsrecon -t axfr -d "target domain"
+
+### DNS Cache Snooping
+
+DNS cache snooping is a type of DNS enumeration technique in which an attacker queries the DNS server for a specific cached DNS record. By using this cached record, the attacker can determine the sites recently visited by the user.
+
+### DNSSEC Zone Walking
+
+Domain Name System Security Extensions (DNSSEC) zone walking is a type of DNS enumeration technique in which an attacker attempts to obtain internal records if the DNS zone is not properly configured.
+
+**LDNS** : LDNS-walk enumerates the DNSSEC zone and obtains results on the DNS record files. 
+
+**DNSRecon** : DNSRecon is a zone enumeration tool that assists users in enumerating DNS records such as A, AAAA, and CNAME. It also performs NSEC zone enumeration to obtain DNS record files of a target domain.
+
+## IPsec Enumeration
+
+IPsec is the most commonly implemented technology for both gateway-to-gateway (LAN-to-LAN) and host-to-gateway (remote access) enterprise VPN solutions. 
+
+Attackers can perform simple direct scanning for ISAKMP at UDP port 500 with tools such as Nmap to acquire information related to the presence of a VPN gateway
+
+nmap –sU –p 500 /target IP address/
+
+Attackers can probe further using fingerprinting tools such as ike-scan to enumerate sensitive information, including the encryption and hashing algorithm, authentication type, key distribution algorithm, and SA LifeDuration. 
+
+**ike-scan –M target gateway IP address**
+- Discovery of host
+- Fingerprinting -> IKe version, soft versions etc..
+- Transform enumeration -> supported by the vpn
+- User Enumertion
+- Pre-shared key craking
+
+## VoIP Enumeration
+
+VoIP is an advanced technology that has replaced the conventional public switched telephone network (PSTN) in both corporate and home environments. 
+
+Attackers use Svmap and Metasploit tools to perform VoIP enumeration. 
+
+**Svmap** is an open-source scanner that identifies SIP devices and PBX servers on a target network.
+**svmap (target network range)**
+
+## RPC Enumeration
+
+The remote procedure call (RPC) is a technology used for creating distributed client/server programs.
+
+Attackers use the following Nmap scan commands to identify the RPC service running on the network : 
+
+nmap -sR <target IP/network>
+nmap -T4 –A <target IP/network>
+
+Additionally, attackers use tools such as NetScanTools Pro to capture the RPC information of the target network. 
+
+## Unix/Linux User Enumeratio
+
+| Command | Description |
+| ----------- | ----------- |
+| rusers | rusers displays a list of users who are logged in to remote machines or machines on the local network. |
+| rwho | rwho displays a list of users who are logged in to hosts on the local network. |
+| finger | finger displays information about system users such as the user’s login name, real name, terminal name, idle time, login time, office location, and office phone numbers. |
+
+							
+
+## Telnet Enumeration 
+
+As shown in the screenshot, the following Nmap command is used by attackers to enumerate the Telnet service running on the target system:
+nmap -p 23 target domain
+
+Attackers can further use the following script to enumerate information from remote Microsoft Telnet services with New Technology LAN Manager (NTLM) authentication enabled:
+
+**nmap -p 23 --script telnet-ntlm-info **
+ 
+Once the information about the target server is obtained, the attackers can use the following script to perform a brute-force attack against the Telnet server:
+
+**nmap -p 23 –script telnet-brute.nse –script-args userdb=/root/Desktop/user.txt,passdb=/root/Desktop/pass.txt**
+
+## SMB Enumeration
+
+Server Message Block (SMB) is a transport protocol that is generally used by Windows systems for providing shared access to files, printers, and serial ports as well as remote access to Windows services.
+
+As shown in the screenshot, attackers use the following Nmap command to enumerate the SMB service running on the target IP address: 
+**nmap -p 445 -A target IP**
+
+The STATE of PORT 445/tcp is OPEN, which indicates that port 445 is open and that the SMB service is running. By using this command, attackers can also obtain details on the OS and traceroute of the specified targe
+
+## FTP Enumeration
+
+The File Transfer Protocol (FTP) is used to transfer files over TCP, and its default port is 21. In FTP, data are transferred between a sender and receiver in plaintext, exposing critical information such as usernames and passwords to attackers. 
+
+As shown in the screenshot, the following Nmap command is used by the attackers to enumerate the FTP service running on the target domain: 
+**nmap -p 21 target domain**
+
+## IPv6 Enumeratio
+
+### Enyx 
+Enyx is an enumeration tool that fetches the IPv6 address of a machine through SNMP.
+As shown in the screenshot, attackers use the following command to enumerate the IPv6 address of a target machine (10.10.10.20) by setting the SNMP version to 2c and community string to public: 
+
+**Python enyx.py 2c public target **
 
 
+### IPv6 Hackit
 
+Hackit is a scanning tool that provides a list of active IPv6 hosts. It can perform TCP port scanning and identify AAAA IPv6 host records.
 
+###  BGP Enumeration
 
+Attackers perform BGP enumeration on the target using tools such as Nmap and BGP Toolkit to discover the IPv4 prefixes indicated by the AS number and the routing path followed by the target.
 
-
-
-
-
-
-
-
+ **nmap -p 179 target IP**
+ 
+ 
 
 
 
