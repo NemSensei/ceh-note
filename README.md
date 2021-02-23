@@ -177,6 +177,75 @@ Avec le TTL et le WIndows Size on peut determiner l'OS
 
 # Module 4 
 
+*In the enumeration phase, attackers enumerate usernames and other information on the groups, network shares, and services of networked computers.*
+
+
+## Techniques for Enumeration
+
+- **Extract usernames using email ID** : username@domain
+- **Extract information using default password**
+- **Brute force Active Directory**
+- **Extract information using DNS Zone Transfer** : Si on fais une zone transfert on peut avoir les info en clair
+- **Extract user groups from Windows** : interface windows simple 
+- **Extract usernames using SNMP** :  utiliser l'API SNMP.
+
+
+
+## NetBios 
+
+- The list of computers that belong to a domai
+- The list of shares on the individual hosts in a network
+- Policies and password
+
+**NbstatUtility** : troubleshooting NETBIOS name resolution problems. Attackers use Nbtstat to enumerate information such as NetBIOS over TCP/IP (NetBT) protocol statistics NetBIOS name tables for both local and remote computers, and the NetBIOS name cache.
+
+**Netbios Enumerator**  : API to enumerate infos 
+
+**Nmap NSE**: tmtc nbstat.nse
+
+## SNMP Enumeration 
+
+SNMP enumeration tools are used to scan a single IP address or a range of IP addresses of SNMP-enabled network devices to monitor, diagnose, and troubleshoot security threats. 
+
+**Management Information Base (MIB)** : MIB is a virtual database containing a formal description of all the network objects that SNMP manages.
+
+**Communication process**
+
+Host x request for active session -> host Y check if host x in MIB. if not send error to known host Z
+
+## SNNMP Enumeration tools
+
+**Snmpcheck** : contact, description, write access, devices, domain, hardware and storage information, hostname, Internet Information Services (IIS) statistics, IP forwarding, listening UDP ports, location, mountpoints, network interfaces, network services, routing information, software components, system uptime, TCP connections, total memory, uptime, and user accounts.
+
+**SoftPerfect Network Scanner** : SoftPerfect Network Scanner can ping computers, scan ports, discover shared folders, and retrieve practically any information about network devices
+
+
+## LDAP Enumeration
+
+lighweight directory access procotol
+
+**Softerra LDAP Administrato**
+
+## NTP and NFS Enumeration 
+
+### NTP 
+
+- List of connected hosts
+- Client IP, Os and names
+- Internal IP if NTP is in DMZ
+
+| Command | Description |
+| ----------- | ----------- |
+| ntpdate | collects the number of time samples from several time sources. |
+| ntptrace | This command determines where the NTP server obtains the time from and follows the chain of NTP servers back to its primary time source. Attackers use this command to trace the list of NTP servers connected to the network.  |
+| ntpdc | This command queries the ntpd daemon about its current state and requests changes in that state. Attackers use this command to retrieve the state and statistics of each NTP server  |
+| ntpq | This command monitors the operations of the NTP daemon ntpd and determines performance.   |
+
+
+
+
+
+
 
 
 
