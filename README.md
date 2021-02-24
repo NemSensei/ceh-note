@@ -494,3 +494,132 @@ Passive scanners are those that do not considerably affect system resources, as 
 
 ![alt text](img/methodo.PNG)
 
+--- 
+
+![alt text](img/methodo2.PNG)
+
+---
+
+
+
+## Gaining Access
+
+### Cracking Password
+
+#### ***Microsoft Authentication***
+
+***Windows uses the Security Accounts Manager (SAM)*** database or Active Directory Database to manage user accounts and passwords in hashed format. Difficult to hack.
+
+
+***NTLM Authentication*** NT LAN Manager (NTLM) is a default authentication scheme that performs authentication using a challenge/response strategy. Because it does not rely on any official protocol specification, there is no guarantee that it works effectively in every situation. 
+
+***Kerberos Authentication*** Kerberos is a network authentication protocol that provides strong authentication for client/server applications through secret-key cryptography. 
+
+
+### How Hash Passwords Are Stored in Windows SAM
+
+Windows OSs use a Security Account Manager (SAM) database file to store user passwords. The SAM file is stored at %SystemRoot%/system32/config/SAM 
+
+
+![alt text](img/sam.PNG)
+
+---
+
+![alt text](img/ntlm.PNG)
+
+---
+
+| Command | Description |
+| ----------- | ----------- |
+|non electric attack| shoulder surfing, social engineering|
+|Active online attack| Communicate with machine try bruteforce, injection, malware, keyloggers etc...|
+|Passive online Attack| sniffing the password by monitoring, replay attack, man in the middle|
+|offline attack| recover from hash dump password a cleared text passwd.|
+
+
+***rule based attacks*** : When you know the rules applied to password, you adapt your bruteforce to match the rules.
+
+**trojan** : program that masks itself as a benign application.
+
+**Spyware** is a type of malware that attackers install on a computer to secretly gather information 
+
+
+![alt text](img/hashinjec.PNG)
+
+---
+
+### LLMNR/NBT-NS Poisoning 
+
+LLMNR (Link Local Multicast Name Resolution) and NBT-NS (NetBIOS Name Service) are two main elements of Windows OSs.
+
+![alt text](img/poison.PNG)
+
+#### Tools : 
+
+**Responder** : Responder is an LLMNR, NBT-NS, and MDNS poisoner. It responds to specific NBT-NS (NetBIOS Name Service) queries based on their name suffix. 
+
+### Internal monologue attack 
+
+![alt text](img/nntlm.PNG)
+
+
+## Cracking Kerberos Passwords
+
+### AS-REP Roasting  
+
+
+![alt text](img/asrep.PNG)
+
+### Kerberoasting
+
+![alt text](img/tgt.PNG)
+
+
+### Pass-the-Ticket Attack
+
+
+**Mimikatz** : Mimikatz allows attackers to pass Kerberos TGT to other computers and sign in using the victim’s ticket. T
+
+---
+
+![alt text](img/mitm.PNG)
+
+---
+
+### **Rainbow Table**
+A rainbow table is a precomputed table that contains word lists like dictionary files and brute-force lists and their hash values. 
+
+### **Distributed Network Attack**
+A Distributed Network Attack (DNA) is a technique used for recovering password-protected files that utilize the unused processing power of machines spread across the network to decrypt passwords. 
+
+
+## Password Recovery Tools
+
+**Elcomsoft Distributed Password Recovery** :
+The Elcomsoft Distributed Password Recovery application allows attackers to break complex passwords, recover strong encryption keys, and unlock documents in a production environment.
+
+## Password-Cracking Tools
+
+**L0phtCrack** : L0phtCrack is a tool designed to audit passwords and recover applications. It recovers lost Microsoft Windows passwords with the help of a dictionary, hybrid, rainbow table, and brute-force attacks, and it also checks the strength of the password
+
+**ophcrack** : Windows password-cracking tool 
+
+**RainbowCrack** : Rainbow table user
+
+## Password Salting
+
+Password salting is a technique in which random strings of characters are added to a password before calculating the hashes. 
+
+## How to Defend against LLMNR/NBT-NS Poisoning
+
+The easiest way to prevent a system from being attacked by a perpetrator is to disable both the LMNR and NBT-NS services in the Windows OS. 
+
+
+## Buffer overflow 
+
+Stack quand alloation statique, Heap quand dinamique. 
+EIP : adresse de retour
+ESP : adresse sommet
+EBP : adresse base
+![alt text](img/stack.PNG)
+
