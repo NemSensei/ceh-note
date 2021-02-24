@@ -395,7 +395,102 @@ Attackers perform BGP enumeration on the target using tools such as Nmap and BGP
 
  **nmap -p 179 target IP**
  
+ ### NFS Countermeasures
  
+ Network File System 
+ 
+ - Implement proper permission in exported file systems
+ - Implement Firewall to block NFS port 2049
+ - Ensure proper configuration to protect data stored in server.
+ - Keep root_squash in /etc/exports so no request in root are trusted
+ - Implement NFS through SSH to encrypt data
 
+### FTP Countermeasures
 
+- Implement Secure FTP (SSH) to encrypt data over the network
+- Implmenet strong password or certification baed authentification policy
+- Restric the uploiading of file on server
+- Disable anonymous FTP account.
+- Restrict access by Ip or Domain
+- Configure ACL's for FTP
+- Restrict login attempt and time
+- Configure filtering rules for FTP's
+- Use SSL/FTPS for authenticated account
+
+# Module 5
+
+## Vulnerability-Management Life Cycl
+
+- **Identify Assets and Create a Baseline** : identifies critical assets and prioritizes them to define the risk
+- **Vulnerability Scan** : 	scan on the network to identify the known vulnerabilities in the organization’s infrastructure. 
+- **Risk Assessment** : all serious uncertainties that are associated with the system are assessed and prioritized
+- **Remediation** : Remediation is the process of applying fixes 
+- **Verification** : re-scan of systems to assess if the required remediation is complete
+- **Monitor** : 
+
+## Vulnerability Classification
+
+- **Misconfiguration**
+- **Default Installations**
+- **Open Services**
+- **Default Password**
+
+## Type of vulnerability Assessments
+
+ | Command | Description |
+| ----------- | ----------- |
+| Active Assessment | uses network scanners to identify the hosts, services, and vulnerabilities present in a network. |
+| Passive Assessment | sniff the traffic present on the network to identify the active systems, network services, applications, and vulnerabilities. |
+| External Assessment | hacker’s point of view to identify exploits and vulnerabilities accessible to the outside world. |
+| Internal Assessment | An internal assessment involves scrutinizing the internal network to find exploits and vulnerabilities. |
+| Host-based Assessment | These assessments check the security of a particular network or server|
+|Network-based Assessment | 	Network assessments determine the possible network security attacks that may occur on an organization’s system|
+|Application Assessment |An application assessment focuses on transactional Web applications, traditional client-server applications, and hybrid systems. |
+| Database Assessment | A database assessment is any assessment focused on testing the databases for the presence of any misconfiguration or known vulnerabilities.  | 
+| Wireless Network Assessment | Wireless network assessment determines the vulnerabilities in an organization’s wireless networks.  |
+
+## Comparing Approaches to Vulnerability Assessment
+
+**Product-Based Solution** : install in organization network, can't always detect external attacks
+
+**Service-Based Solutions** : offered by hird parties ( audit), drawback : hacker can audit networks
+
+**Tree-Based Assessment** : different strategy for each machine/network
+
+** Inference-Based Assessment ** : scanning starts by building an inventory of theprotocols found on the machine. After finding services, it selects vulnerabilities on each machine and starts to execute only those relevant tests
+
+## Types of Vulnerability Assessment Tools
+
+**Host-Based Vulnerability Assessment Tools** : 
+The host-based scanning tools are appropriate for servers that run various applications.
+
+**Depth Assessment Tools** : 
+discover and identify previously unknown vulnerabilities in a system. 
+
+**Application-Layer Vulnerability Assessment Tools** :  Web Servers and Database
+Application-layer vulnerability assessment tools are designed to serve the needs of all kinds of operating system types and applications. Various resources pose a variety of security threats and are identified by the tools designed for that purpose.
+
+**Scope Assessment Tools** : 
+Scope assessment tools provide an assessment of the security by testing vulnerabilities in the applications and operating system. 
+
+**Active and Passive Tools** : 
+Active scanners perform vulnerability checks on the network functions that consume resources on the network.
+
+Passive scanners are those that do not considerably affect system resources, as they only observe system data and perform data processing on a separate analysis machine.
+
+** Location and Data Examination Tools ** : 
+
+## Vulnerability Assessment Tools
+
+**Qualys Vulnerability Management** : Cloud based very good.
+
+**Nessus Professional** : scanning platform for auditors and security analysts.
+
+**OpenVAS** :  framework of several services and tools that offer a comprehensive and powerful vulnerability scanning and vulnerability management solution.
+
+**Nikto** : Nikto is an Open Source (GPL) web server scanner.
+
+# Module 6
+
+![alt text](methodo.png)
 
