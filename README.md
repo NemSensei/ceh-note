@@ -623,3 +623,13 @@ ESP : adresse sommet
 EBP : adresse base
 ![alt text](img/stack.PNG)
 
+## Privilege Escalation Using DLL Hijacki
+
+
+![alt text](img/dll.PNG)
+
+Attackers use tools such as **Robber** and **PowerSploit** to detect hijackable DLLs and perform DLL hijacking on the target system.
+
+## Privilege Escalation using Spectre and Meltdown Vulnerabilities
+
+Use new processor features to read restricted data.
