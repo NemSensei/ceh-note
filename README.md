@@ -492,5 +492,5 @@ Passive scanners are those that do not considerably affect system resources, as 
 
 # Module 6
 
-![alt text](ceh-notes/methodo.png)
+![alt text](ceh-notes/methodo.PNG)
 
