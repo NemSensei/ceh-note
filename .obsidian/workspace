@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "c80e49cb2265e5fe",
+        "id": "f7b3398f5d9e3add",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
             "file": "README.md",
-            "mode": "source"
+            "mode": "preview"
           }
         }
       }
@@ -87,6 +87,7 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "README.md"
+    "README.md",
+    "img/keylog.PNG"
   ]
 }

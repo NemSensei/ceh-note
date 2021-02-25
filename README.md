@@ -623,7 +623,7 @@ ESP : adresse sommet
 EBP : adresse base
 ![alt text](img/stack.PNG)
 
-## Privilege Escalation Using DLL Hijacki
+## Privilege Escalation Using DLL Hijacking
 
 
 ![alt text](img/dll.PNG)
@@ -633,3 +633,192 @@ Attackers use tools such as **Robber** and **PowerSploit** to detect hijackable 
 ## Privilege Escalation using Spectre and Meltdown Vulnerabilities
 
 Use new processor features to read restricted data.
+
+
+## Privilege Escalation using Named Pipe Impersonation
+
+In windows, process use file to send message to each other. 
+In any Windows system, when a process creates a pipe, it will act as a pipe server. If any other process wants to communicate with this process, it will connect to this pipe and it becomes a pipe client. 
+
+Attakcer uses metasploit to perform name pipi impersonation.
+
+## Privilege Escalation Tools
+
+**BeRoot** is a post-exploitation tool to check common misconfigurations to find a way to escalate privilege.
+
+**linpostexp** tool obtains detailed information on the kernel, which can be used to escalate privileges on the target system.
+
+## How to Defend Against Privilege Escalation
+
+Restrict interactive logon privileges 
+ Run users and applications with the lowest privileges 
+ Implement multi-factor authentication and authorization 
+ Run services as unprivileged accounts 
+ Implement a privilege separation methodology to limit the scope of programming errors and bugs 
+ Use an encryption technique to protect sensitive data 
+ Reduce the amount of code that runs with a particular privilege 
+ Perform debugging using bounds checkers and stress tests 
+ Test the system for application coding errors and bugs thoroughly
+ Regularly patch and update the kernel 
+ Change UAC settings to “Always Notify,” so that it increases the visibility of the user when UAC elevation is requested
+ Restrict users from writing files to the search paths for applications 
+ Continuously monitor filesystem permissions using auditing tools 
+ Reduce the privileges of user accounts and groups so that only legitimate administrators can make service changes
+ Use whitelisting tools to identify and block malicious software that changes file, directory, or service permissions
+ Use fully qualified paths in all Windows applications 
+ Ensure that all executables are placed in write-protected directories 
+ In Mac OSs, prevent plist files from being altered by users by making them read-only 
+ Block unwanted system utilities or software that may be used to schedule tasks 
+ Regularly patch and update the web servers
+ Disable the default local administrator account 
+ Detect, repair, and fix any flaws or errors running in the system services
+
+---
+rajouter les autres contre mesure
+
+--
+
+## Maintaining access 
+
+**Backdoors**: Program designed to deny or disrupt the operation, gather information that leads to exploitation or loss of privacy, or gain unauthorized access to system resources.
+
+**Crackers**: Components of software or programs designed for cracking a code or passwords.
+
+**Keyloggers:** These can be hardware or software. In either case, the objective is to record each keystroke made on the computer keyboard
+
+**Spyware**: Spy software may capture screenshots and send them to a specified location defined by the hacker. For this purpose, attackers have to maintain access to victims’ computers. After deriving all the requisite information from the victim’s computer, the attacker installs several backdoors to maintain easy access to it in the futur
+
+### Exploitation for Client ExecutionExploitation for Client Execution
+
+**Web-Browser-Based Exploitation**
+Attackers target web browsers through spearphishing links and drive-by compromise. 
+
+**Office-Applications-Based Exploitation**
+
+**Third-Party Applications-Based Exploitation**
+
+ ## Scheduled Task
+ 
+ schedul malicious programme, for on boot for example.
+ 
+ ## Service Execution
+ 
+ System services are programs that run and operate at the backend of an OS. Attackers run binary files or commands that can communicate with Windows system services such as Service Control Manager.
+ 
+ ## Windows Management Instrumentation (WMI)
+ 
+ Attackers can use the WMI feature to interact with the target system remotely, and use it to perform information gathering on system resources and further execute code for maintaining access to the target system.
+
+## Windows Remote Management (WinRM)
+
+WinRM is a Windows-based protocol designed to allow a user to run an executable file to modify system services and the registry on a remote system. Attackers can use the winrm command to interact with WinRM and execute a payload on the remote system as a part of lateral movement.
+
+## Tools for Executing Application
+
+
+**RemoteExec** RemoteExec remotely installs applications, executes programs/scripts, and updates files and folders on Windows systems 
+
+
+## keylogger
+
+![alt text](img/keylog.PNG)
+
+
+## Types of Spywar
+
+**Desktop Spyware**
+
+ Live recording of remote desktops
+ Recording and monitoring Internet activities 
+ Recording software usage and timings 
+ Recording an activity log and storing it at one centralized location 
+ Logging users’ keystrokes
+
+**Email Spyware**
+
+Email spyware is a program that monitors, records, and forwards all incoming and outgoing emails. 
+
+**Internet Spyware**
+
+Internet spyware is a tool that allows you to monitor all the web pages accessed by users on your computer in your absence.
+
+**Child-Monitoring Spyware**
+Child-monitoring spyware allows you to track and monitor what children are doing on the computer, both online and offline. 
+
+**Child-Monitoring Spyware**
+Child-monitoring spyware allows you to track and monitor what children are doing on the computer, both online and offline. 
+
+**USB Spyware**
+USB spyware is a program designed for spying on a computer, which copies spyware files from a USB device onto the hard disk without any request or notification. 
+
+**Audio Spyware** 
+Audio spyware is a sound surveillance program designed to record sound onto a computer.
+
+**Video Spyware**
+
+**Print Spyware**
+
+**Telephone/Cellphone Spyware**
+
+**GPS Spyware**
+
+## Spyware Tools
+
+**Spytech SpyAgent**
+
+**Power Spy **
+
+## Hiding files
+
+**Rootkits** are software programs designed to gain access to a computer without being detected. They are malware that help attackers gain unauthorized access to a remote system and perform malicious activities. 
+
+![alt text](img/rootkit.PNG)
+
+
+### Detecting Rootkits 
+
+**Integrity-Based Detection**
+
+Create a firest snapshot. Then check for dissimilarities regularly.
+
+
+**Signature-Based Detection**
+
+They compare the characteristics of all system processes and executable files with a database of known rootkit fingerprints.
+
+**Heuristic/Behavior-Based Detection**
+
+Heuristic-based detection works by identifying deviations in normal OS patterns or behaviors. 
+
+**Runtime Execution Path Profiling**
+
+Compares runtime execution path profiling of all system processes and executable files to a routine’s execution path to destabilize it.
+
+**Cross-View-Based Detection **
+
+The tools compare the gathered information with the dataset obtained using an algorithm to traverse through the same data. 
+
+**Alternative Trusted Medium**
+
+ In this technique, the infected system is shut down and then booted from alternative trusted media, such as a bootable CD-ROM or USB flash drive. 
+ 
+ **Analyzing Memory Dumps**
+
+In memory dump analysis, the volatile memory (RAM) of the suspected system is dumped and analyzed to detect the rootkit in the system. 
+
+## NTFS Data Stream
+
+NTFS is a filesystem that stores a file with the help of two data streams, called NTFS data streams, along with the file attributes. The first data stream stores the security descriptor for the file to be stored, such as permissions, and the second stores the data within a file.
+
+
+![alt text](img/ntfs.PNG)
+
+
+An ADS refers to any type of data attached to a file, but not in the file on an NTFS system.
+
+![[Pasted image 20210225103303.png]]
+
+
+
+
+
