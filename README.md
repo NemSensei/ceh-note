@@ -816,9 +816,87 @@ NTFS is a filesystem that stores a file with the help of two data streams, calle
 
 An ADS refers to any type of data attached to a file, but not in the file on an NTFS system.
 
-![[Pasted image 20210225103303.png]]
+![alt text](img/ntfs2.PNG)
+
+ADSs can fork data into existing files without changing or altering their functionality, size, or display to file-browsing utilities. They allow an attacker to inject malicious code into files on an accessible system and execute them without being detected by the user. ADSs provide attackers with a method of hiding rootkits or hacker tools on a breached system and allow a user to execute them while hiding from the system administrator.
+
+## How to Create NTFS Streams
+
+![alt text](img/ntfs3.PNG)
+
+## Steganography
+
+![alt text](img/stega.PNG)
 
 
+### Snow
+
+Snow is a program for concealing messages in text files by appending tabs and spaces to the ends of lines, and for extracting messages from files containing hidden messages
+
+### OpenStego 
+
+OpenStego is a steganography application that provides the following functions. 
+
+Data Hiding: It can hide any data within a cover file (e.g., images)
+Watermarking: Watermarking files (e.g., images) with an invisible signature. It can be used to detect unauthorized file copying.
+
+ ### StegoStick 
+ 
+ StegoStick is a steganographic tool that allows attackers to hide any file in any other file. 
+ 
+ 
+ ### OmniHide PRO 
+ 
+ OmniHide PRO allows you to hide any secret file within an innocuous image, video, music file, etc. 
 
 
+### DeepSound
 
+DeepSound allows you to hide any secret data in audio files (WAV and FLAC). It also allows you to extract secret files directly from audio CD tracks
+
+###  GiliSoft File Lock Pr
+
+GiliSoft File Lock Pro restricts access to files, folders, and drivers by locking, hiding, or password-protecting them. Attackers can thus use this tool for these purposes. With this program, nobody can access or destroy the attacker’s data without a password.
+
+### Spam Mimic
+
+Spam Mimic is spam “grammar” for a mimic engine by Peter Wayner. This encodes secret messages into innocent-looking spam emails. 
+
+## Stega detection
+
+### zsteg 
+
+As shown in the screenshot, you can use the zsteg tool to detect the hidden secret message in the image file.
+
+## Covering tracks
+
+Attackers may not wish to delete an entire log to cover their tracks, as doing so may require admin privileges. If attackers can delete only attack event logs, they will still be able to escape detection.
+
+The attacker can manipulate the log files with the help of
+ **SECEVENT.EVT** (security): failed logins, accessing files without privileges 
+ **SYSEVENT.EVT** (system): driver failure, things not operating correctly 
+ **APPEVENT.EVT** (applications)
+
+### Techniques Used for Covering Tracks
+
+| Command | Description |
+| ----------- | ----------- |
+|Disabling Auditing| An attacker disables auditing features of the target system. |
+|Clearing Logs|  An attacker clears/deletes the system log entries corresponding to his/her activities.|
+|Manipulating Logs:| An attacker manipulates logs in such a way that he/she will not be caught in legal action.|
+|Covering Tracks on the Network:|  An attacker uses techniques such as reverse HTTP shells, reverse ICMP tunnels, DNS tunneling, and TCP parameters to cover tracks on the network.
+| Covering Tracks on the OS | An attacker uses NTFS streams to hide and cover malicious files in the target system.|
+| Deleting Files | An attacker uses a command-line tool such as Cipher.exe to delete the data and prevent recovery of that data in future. |
+| Disabling Windows Functionality: | An attacker disables Windows functionality such as last access timestamp, hibernation, virtual memory, system restore points, etc. to cover tracks. | 
+
+The moment intruders gain administrative privileges; they disable auditing with the help of auditpol.exe. Once they complete their mission, they again turn on auditing using the same tool.
+
+Clear_Event_Viewer_Logs.bat is a utility that can be used to wipe out the logs of the target system. This utility can be run through command prompt, PowerShell, and using a BAT file to delete security, system, and application logs. 
+
+![alt text](img/prevent.PNG)
+
+## Defending against Covering Tracks
+
+![alt text](img/covering.PNG)
+
+# Module 7 
