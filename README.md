@@ -900,3 +900,77 @@ Clear_Event_Viewer_Logs.bat is a utility that can be used to wipe out the logs o
 ![alt text](img/covering.PNG)
 
 # Module 7 
+
+## Different Ways for Malware to Enter a System
+
+**Instant Messenger Applications **
+
+**Portable Hardware Media/Removable Device**
+
+**Browser and Email Software Bugs**
+
+Outdated web browsers often contain vulnerabilities that can pose a major risk to the user’s computer. A visit to a malicious site from such browsers can automatically infect the machine without downloading or executing any program. 
+
+**Insecure Patch management**
+
+**Rogue/Decoy Applications**
+
+**Untrusted Sites and Free Web Applications/Software**
+
+**Downloading Files from the Internet**
+
+**Email Attachment**
+
+**Network Propagation**
+
+**File Sharing**
+
+**Installation by other Malware**
+
+**Bluetooth and Wireless Network**
+
+## Common Techniques Attackers Use to Distribute Malware on the Web
+
+**Black hat Search Engine Optimization (SEO)** : Black hat SEO (also referred to as unethical SEO) uses aggressive SEO tactics such as keyword stuffing, inserting doorway pages, page swapping, and adding unrelated keywords to get higher search engine rankings for malware pages.
+
+**Social Engineered Click-jacking**: Attackers inject malware into websites that appear legitimate to trick users into clicking them. 
+
+**Spear-phishing Sites**: This technique is used for mimicking legitimate institutions
+
+**Malvertising**: This technique involves embedding malware-laden advertisements in legitimate online advertising channels 
+
+**Compromised Legitimate Websites:**
+
+**Drive-by Downloads**: This refers to the unintentional downloading of software via the Internet. 
+
+**Spam Emails:**
+
+
+## Components of Malware 
+
+|Command | Description |
+| ----------- | ----------- |
+|Crypter: |It is a software program that can conceal the existence of malware.
+|Downloader: |It is a type of Trojan that downloads other malware
+|Dropper:| It is a covert carrier of malware.
+|Exploit:| It is the part the malware that contains code or a sequence of commands that can take advantage of a bug or vulnerability
+|Injector| This program injects exploits or malicious code available in the malware into other vulnerable running processes 
+|Obfuscator: |It is a program that conceals the malicious code of malware via various techniques,
+|Packer:| This software compresses the malware file to convert the code and data of the malware into an unreadable format.
+|Payload:| It is the part of the malware that performs the desired activity when activated.
+|Malicious Code: |This is a piece of code that defines the basic functionality of the malware and comprises commands|
+
+
+## APT
+
+An **advanced persistent threat** is defined as a type of network attack whereby an attacker gains unauthorized access to a target network and remains in the network without being detected for a long time.
+
+### Advanced Persistent Threat Lifecycle
+
+1. Preparation 
+2. Initial Intrusion
+3. Expansion
+4. Persistence
+5. Search and Exfiltration
+6. Cleanup
+
