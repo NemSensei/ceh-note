@@ -974,3 +974,27 @@ An **advanced persistent threat** is defined as a type of network attack whereby
 5. Search and Exfiltration
 6. Cleanup
 
+![alt text](img/apt.PNG)
+
+
+## Types of Trojans
+
+ 1. Remote Access Trojans (RAT)
+ 2. Backdoor Trojans
+ 3. Botnet Trojans 
+ 4. Rootkit Trojans
+ 5. E-Banking Trojans 
+ 6. Point-of-Sale Trojans 
+ 7.  Defacement Trojans 
+ 8. Service Protocol Trojans 
+ 9. Mobile Trojans 
+ 10. IoT Trojans 
+ 11. Security Softw
+ 12. Destructive Trojans 
+ 13. DDoS Attack Trojans  
+ 14. Command Shell Trojan
+
+![alt text](img/trojan.PNG)
+
+
+A finir ( contre mesure)
